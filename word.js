@@ -11,3 +11,13 @@
 
 //var for required pages
 var letter = require("./letter.js");
+
+var Word = function (){
+    this.letterArray = [];
+    this.underscore = function(){
+
+    }
+    this.character = function(){
+        
+    }
+}
