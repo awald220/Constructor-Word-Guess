@@ -17,9 +17,17 @@ var Letter = function(){
     this.storeUnderscore = storeUnderscore;
     this.guessedYet = false;
     this.guessLetter = function(){
-
+        if(this.letter === " "){
+            this.guessedYet = true;
+            return " ";
+        }else{
+            return this.letter;
+        }
     },
-    this.correctGuess = function(){
-        
+    this.correctGuess = function(guess){
+        if (guess === this.letter){
+            this.guessedYet = true;
+        }
     }
 }
+

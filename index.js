@@ -14,7 +14,7 @@
 
 // vars for required files and packages
 var word = require("./word.js");
-
+var inquirer = require("inquirer")
 
 //array of words
 var wordChoices = ["function", "object", "array", "constructor", "html", "css", "javascript", "firebase", "node", "var", "else","loop"]
@@ -26,3 +26,12 @@ var randomWord = wordChoices[Math.floor(Math.random() * wordChoices.length)]
 console.log(randomWord)
 
 // Prompts the user for each guess and keeps track of the user's remaining guesses
+inquirer.prompt([
+    {
+        name: "name",
+        message: "Please guess a letter!"
+    }
+]).then (function(answer){
+
+});
+

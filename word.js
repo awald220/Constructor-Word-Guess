@@ -12,12 +12,26 @@
 //var for required pages
 var letter = require("./letter.js");
 
-var Word = function (){
-    this.letterArray = [];
+var Word = function (answer){
+    this.objectArray = [];
+
+        for (var i = 0; i < answer.length; i++){
+            var letter = new Letter(answer[i]);
+            this.objectArray.push(letter)
+        }
+
     this.underscore = function(){
+        answerLog = "";
+        for(var j = 0; j < this.objectArray.length; j++){
+            answerLog += this.objectArray[j] + " ";
+        }
+        console.log(answerLog)
 
     }
-    this.character = function(){
-        
+    this.character = function(input){
+        for (var k = 0; i < this.objectArray.length; i++){
+            this.objectArray[k].guess(input);
+        }
+
     }
 }
