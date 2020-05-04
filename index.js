@@ -36,7 +36,7 @@ function start(){
         
         requireNewWord = false;
     }
-}
+
 
 
 // check to see if the letter that was guessed is in the word
@@ -48,10 +48,7 @@ passWord.objectArray.forEach(completeCheck);
 //letters left
 if (wordComplete.includes(false)){
     //repeat prompt until the word is gussed
-    var count = 0;
-    if (count < letterArray){
-        console.log(`NEW GUESS`)
-    }
+   
 
 // Prompts the user for each guess and keeps track of the user's remaining guesses
     inquirer.prompt([
@@ -61,6 +58,7 @@ if (wordComplete.includes(false)){
             message: "Please guess a letter!"
         }
     ]).then (function(input){
+   
         if (!letterArray.includes(input.userinput) || input.userinput.length >1){
             console.log(`
             INCORRECT GUESS
@@ -104,7 +102,7 @@ if (wordComplete.includes(false)){
                     start()
                 } else {
                     console.log(`You have lost! Please try again`)
-
+                    restartGame()
                 }
 
                 function wordCheck(key) {
@@ -116,12 +114,14 @@ if (wordComplete.includes(false)){
 });
 } else {
     console.log(`You have won the game`)
+    restartGame()
 }
 
 function completeCheck(key) {
     wordComplete.push(key.guessed);
 }
-
+}
+// function to restart the game if the user so chooses
 function restartGame(){
     inquirer.prompt([
         {
