@@ -47,6 +47,11 @@ passWord.objectArray.forEach(completeCheck);
 
 //letters left
 if (wordComplete.includes(false)){
+    //repeat prompt until the word is gussed
+    var count = 0;
+    if (count < letterArray){
+        console.log(`NEW GUESS`)
+    }
 
 // Prompts the user for each guess and keeps track of the user's remaining guesses
     inquirer.prompt([
@@ -117,3 +122,25 @@ function completeCheck(key) {
     wordComplete.push(key.guessed);
 }
 
+function restartGame(){
+    inquirer.prompt([
+        {
+            type:"list",
+            message:"Do you want to play again?",
+            choices:["Yes", "No"],
+            name: "restart"
+        }
+    ]).then(function(input){
+        if (input.restart === "Yes"){
+            requireNewWord = true;
+            incorrectLetters = [];
+            correctLetters = [];
+            guessesLeft = 10;
+            start();
+        } else {
+            return
+        }
+    })
+}
+
+start()
