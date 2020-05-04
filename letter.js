@@ -36,3 +36,6 @@ var Letter = function(){
     }
 }
 
+console.log(`letter is working`)
+
+module.exports = Letter;
