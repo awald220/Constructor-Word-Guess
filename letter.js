@@ -14,14 +14,19 @@
 
 
 var Letter = function(){
-    this.storeUnderscore = storeUnderscore;
-    this.guessedYet = false;
-    this.guessLetter = function(){
+    this.letter = letter;
+    this.guessed = false;
+    this.toString = function(){
         if(this.letter === " "){
-            this.guessedYet = true;
+            this.guessed = true;
             return " ";
         }else{
-            return this.letter;
+            if(this.guessed === false){
+                return "_";
+            }else{
+                return this.letter;
+            }
+           
         }
     },
     this.correctGuess = function(guess){

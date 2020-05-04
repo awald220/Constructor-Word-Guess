@@ -12,7 +12,7 @@
 //var for required pages
 var letter = require("./letter.js");
 
-var Word = function (answer){
+var Word = function (objectArray, underscore,character){
     this.objectArray = [];
 
         for (var i = 0; i < answer.length; i++){
@@ -35,3 +35,5 @@ var Word = function (answer){
 
     }
 }
+
+console.log(`this is working word`)
